@@ -3,10 +3,7 @@ export declare type GpsMessage = {
   status: 'enabled' | 'disabled';
 };
 export declare type EnabledMessage = 'GPS is enabled' | 'GPS is disabled';
-export declare type GpsStatus = {
-  gpsIsEnabled?: GpsIsEnabled;
-  message?: EnabledMessage;
-};
+
 export interface capacitorGpsEnableIosPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
    /**
@@ -14,7 +11,7 @@ export interface capacitorGpsEnableIosPlugin {
       *
       * @since 1.0.0
       */
-  isGpsEnabled(options: { value: string }): Promise<String>;
+  isGpsEnabled(): Promise<GpsIsEnabled>;
   //  /**
   //    * Turn On Gps
   //    *

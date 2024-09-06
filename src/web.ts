@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { capacitorGpsEnableIosPlugin, GpsStatus } from './definitions';
+import type { capacitorGpsEnableIosPlugin, GpsIsEnabled } from './definitions';
 
 export class capacitorGpsEnableIosWeb
   extends WebPlugin
@@ -10,12 +10,10 @@ export class capacitorGpsEnableIosWeb
     console.log('ECHO hiiii', options);
     return options;
   };
-  async isGpsEnabled(options: { value: string }): Promise<String> {
-    console.log(options)
-    // const output = ""
-    // return output
-    return options.value
-}
+  async isGpsEnabled(): Promise<GpsIsEnabled> {
+    const output = true
+    return output;
+  };
   // async tunOnGpsDialog(){}
 
 }
